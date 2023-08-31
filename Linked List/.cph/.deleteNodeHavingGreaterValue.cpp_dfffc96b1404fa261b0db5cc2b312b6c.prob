@@ -1,0 +1,1 @@
+{"name":"Local: deleteNodeHavingGreaterValue","url":"c:\\Love Babbar DSA Sheet\\Linked List\\deleteNodeHavingGreaterValue.cpp","tests":[{"id":1692981417516,"input":"8\n12 15 10 11 5 6 2 3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Love Babbar DSA Sheet\\Linked List\\deleteNodeHavingGreaterValue.cpp","group":"local","local":true}

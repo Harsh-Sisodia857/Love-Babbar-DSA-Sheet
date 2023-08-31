@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "utility": "cpp",
+        "xstring": "cpp",
+        "xutility": "cpp",
+        "xlocale": "cpp",
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "stack": "cpp",
+        "istream": "cpp",
+        "deque": "cpp",
+        "queue": "cpp",
+        "vector": "cpp"
+    }
+}
