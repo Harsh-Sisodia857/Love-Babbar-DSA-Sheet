@@ -20,7 +20,6 @@ public:
             int frontNode = q.front();
             bfs.push_back(frontNode);
             q.pop();
-            vis[frontNode] = true;
             for (auto it : adjList[frontNode])
             {
                 if (vis[it] == false)
