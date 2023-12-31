@@ -7,6 +7,7 @@
 // The left subtree has a height of h - 1, and the right subtree has a height of h - 2.
 // The left subtree has a height of h - 2, and the right subtree has a height of h - 1.
 // It calculates the number of binary trees for each of these cases and then adds them together to get the total count of binary trees for height h
+
 long long int count(int h)
 {
     // count(h-2), count(h-2)

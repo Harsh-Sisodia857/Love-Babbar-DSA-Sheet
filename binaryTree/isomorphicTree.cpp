@@ -106,9 +106,10 @@ public:
             return false;
         if (root1->data != root2->data)
             return false;
-
+        // checking isomorphic without changing childs
         bool a = isIsomorphic(root1->left, root2->left) and
                  isIsomorphic(root1->right, root2->right);
+        // checking isomorphic with changing childs
         bool b = isIsomorphic(root1->left, root2->right) and
                  isIsomorphic(root1->right, root2->left);
         return a or b;

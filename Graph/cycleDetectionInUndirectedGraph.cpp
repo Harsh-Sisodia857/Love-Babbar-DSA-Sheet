@@ -16,6 +16,7 @@ public:
         {
             int node = q.front().first;
             int parent = q.front().second;
+            q.pop();
             for (auto it : adj[node])
             {
                 if (!vis[it])

@@ -10,7 +10,7 @@ int f(int idx,int prev,int arr[], int n){
     if(arr[idx] > arr[prev])
         pick = 1 + f(idx+1,idx,arr,n);
     // not pick
-    int notPick =0 + f(idx+1,prev,arr,n);
+    int notPick = 0 + f(idx+1,prev,arr,n);
     return max(pick,notPick);
 }
 

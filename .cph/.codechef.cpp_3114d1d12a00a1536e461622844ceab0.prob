@@ -1,0 +1,1 @@
+{"name":"Local: codechef","url":"c:\\Love Babbar DSA Sheet\\codechef.cpp","tests":[{"id":1700061918602,"input":"6\n1 0\n1 1\n1 2\n4 4\n4 6\n10 20","output":"0\n0\n2\n0\n4\n20"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Love Babbar DSA Sheet\\codechef.cpp","group":"local","local":true}

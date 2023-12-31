@@ -17,7 +17,7 @@ int f(int idx, int W, int cost[], int N)
 }
 int minimumCost(int cost[], int N, int W)
 {
-    int result = f(0, W, cost, N, dp);
+    int result = f(0, W, cost, N);
     if (result != 1e8)
         return result;
     return -1;

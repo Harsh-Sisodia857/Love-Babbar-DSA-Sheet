@@ -26,6 +26,6 @@ public:
     {
         // postorder of max heap is sorted
         inorder(root);
-        postOrder(root;
+        postOrder(root);
     }
 };

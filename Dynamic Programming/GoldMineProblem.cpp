@@ -126,3 +126,38 @@ int main()
     return 0;
 }
 
+// tabulation
+
+int maxGold(int n, int m, vector<vector<int>> M)
+{
+    vector<vector<int>> dp(n, vector<int>(m, 0));
+
+    // Initialize the last column of dp with the values from the matrix
+    for (int i = 0; i < n; i++)
+    {
+        dp[i][m - 1] = M[i][m - 1];
+    }
+
+    // Iterate from the second last column to the first
+    for (int col = m - 2; col >= 0; col--)
+    {
+        for (int row = 0; row < n; row++)
+        {
+            int right = M[row][col] + dp[row][col + 1];
+            int diagonallyUp = (row - 1 >= 0) ? M[row][col] + dp[row - 1][col + 1] : 0;
+            int diagonallyDown = (row + 1 < n) ? M[row][col] + dp[row + 1][col + 1] : 0;
+
+            // Update the dp matrix with the maximum of the three possibilities
+            dp[row][col] = max(right, max(diagonallyUp, diagonallyDown));
+        }
+    }
+
+    // Find the maximum value in the first column of dp
+    int maxi = INT_MIN;
+    for (int i = 0; i < n; i++)
+    {
+        maxi = max(maxi, dp[i][0]);
+    }
+
+    return maxi;
+}

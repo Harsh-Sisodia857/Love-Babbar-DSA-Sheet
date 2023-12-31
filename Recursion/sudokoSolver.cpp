@@ -14,7 +14,7 @@ class Solution
 {
     public:
     bool isValid(int row,int col,int num,int grid[N][N]){
-        for(int i = 0; i <N;i++){
+        for(int i = 0; i < N; i++){
             if(grid[i][col] == num)
                 return false;
         

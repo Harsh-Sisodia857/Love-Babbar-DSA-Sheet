@@ -1,36 +1,36 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-struct Node
+vector<int> diagonal(Node *root)
 {
-    int data;
-    Node *left, *right;
-};
-void diagonalPrint(Node *root){
-    if(root == NULL)
-        return;
+    // your code here
     map<int, vector<int>> m;
-    queue<pair<Node *,int>> q;
-    q.push({root,0});
-    while(!q.empty()){
-        Node *temp = q.front().first;
-        int hdis = q.front().second;
-        q.pop();
-        if(temp != NULL){
-        m[hdis].push_back(temp->data);
-        if(temp->left)
-            q.push({temp->left,hdis-1});
 
-        if(temp->right)
-            q.push({temp->right,hdis});
+    queue<pair<Node *, int>> q;
+    q.push({root, 0});
+    vector<int> ans;
+    while (!q.empty())
+    {
+        auto firstEle = q.front();
+        q.pop();
+        Node *curr = firstEle.first;
+        int hdis = firstEle.second;
+        while (curr)
+        {
+            // printing all the nodes having same vertical distance
+            ans.push_back(curr->data);
+            if (curr->left)
+                q.push({curr->left, hdis + 1});
+            curr = curr->right;
         }
     }
-    for(auto it : m){
-        cout << it.first << " :";
-        for(auto j : it.second)
-            cout << j << " ";
-        cout << endl;
+    for (auto it = m.begin(); it != m.end(); ++it)
+    {
+        for (auto j : it->second)
+            ans.push_back(j);
     }
+
+    return ans;
 }
 
 Node *newNode(int data)

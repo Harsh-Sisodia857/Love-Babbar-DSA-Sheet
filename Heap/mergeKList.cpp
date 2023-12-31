@@ -50,7 +50,7 @@ public:
     {
         bool operator()(Node *a, Node *b)
         {
-            return a->data > b->data; // Assuming 'data' is the value in your nodes
+            return a->data > b->data; 
         }
     };
     // Function to merge K sorted linked list.

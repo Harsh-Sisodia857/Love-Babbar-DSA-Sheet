@@ -102,7 +102,7 @@ public:
         }
         string l = solve(root->left, flag, ans);
         string r = solve(root->right, flag, ans);
-        string f = l + "," + r + "," + root->data;
+        string f = left + right + to_string(root->data) + ",";
         ans[f]++;
         if (ans[f] >= 2 && f.length() > 5)
             flag = true;

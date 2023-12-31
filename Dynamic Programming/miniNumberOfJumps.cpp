@@ -109,4 +109,21 @@ int main()
     return 0;
 }
 
-// 
+// Tabulation
+
+int minJumps(int arr[], int n)
+{
+    vector<int> dp(n, INT_MAX);
+    dp[n - 1] = 0;
+
+    for (int idx = n - 2; idx >= 0; idx--)
+    {
+        int pick = INT_MAX;
+        for (int i = 1; i <= arr[idx] && idx + i < n; i++)
+        {
+            pick = min(pick, 1 + f(idx + i, arr, n, dp));
+        }
+        dp[idx] = pick;
+    }
+    return dp[0] > 1e8 ? -1 : dp[0];
+}

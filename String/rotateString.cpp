@@ -26,5 +26,3 @@ bool rotateString(string s, string goal)
     }
     return false;
 }
-}
-;

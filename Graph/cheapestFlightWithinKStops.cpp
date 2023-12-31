@@ -23,7 +23,7 @@ int findCheapestPrice(int n, vector<vector<int>> &flights, int src, int dst, int
         {
             int neighNode = it.first;
             int ct = it.second;
-            if (cost + ct < dist[neighNode] && stops <= k)
+            if (cost + ct < dist[neighNode])
             {
                 dist[neighNode] = cost + ct;
                 q.push({stops + 1, {neighNode, ct + cost}});

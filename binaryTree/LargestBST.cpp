@@ -23,6 +23,7 @@ NodeValue solve(Node *root)
         return NodeValue(min(left.mini, root->data),
                          max(right.max, root->data), max(left.size, right.size) + 1);
     }
+    // Ab apko min mai minimum value send krni hai or max mai maximum taki aage jake comparision na ho paye
     return NodeValue(INT_MAX, INT_MIN, max(left.size, right.size));
 }
 

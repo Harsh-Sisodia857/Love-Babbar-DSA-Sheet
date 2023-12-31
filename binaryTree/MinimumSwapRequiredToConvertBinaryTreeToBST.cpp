@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+// EX - 5, 6, 7, 8, 9, 10, 11
 
 void inorder(int a[],vector<int> &v,int n,int idx){
     if(idx >= n)

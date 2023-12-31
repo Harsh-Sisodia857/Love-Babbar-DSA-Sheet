@@ -13,6 +13,11 @@ public:
         // base case
         if (n == 1 || n == 2)
             return n;
+       // For n-th person there are two choices:   
+       // 1) n-th person remains single, we recur for f(n – 1) 
+       // 2) n-th person pairs up with any of the remaining n – 1 persons. We get (n – 1) * f(n – 2)Therefore we can recursively write f(n) as:f(n) = f(n – 1) + (n – 1) * f(n – 2)
+
+
         int Single = f(n - 1);
         int pairingWithOther = (n - 1) * f(n - 2); // n - 1 calls for f(n-2)
         return (Single + pairingWithOther) % mod;
