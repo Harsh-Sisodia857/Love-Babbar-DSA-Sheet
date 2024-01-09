@@ -17,7 +17,7 @@ int findPeakElement(vector<int> &arr) {
         // mid is peak element
         if(arr[mid] > arr[mid-1] && arr[mid + 1] < arr[mid])
             return mid;
-        // uprend
+        // uptrend
         if(arr[mid] > arr[mid-1] && arr[mid] < arr[mid + 1]){
             low = mid + 1;
         }
