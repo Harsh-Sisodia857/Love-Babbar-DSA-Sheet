@@ -1,0 +1,1 @@
+{"name":"Local: AnagramString","url":"c:\\Love Babbar DSA Sheet\\Hashing\\AnagramString.cpp","tests":[{"id":1708341524633,"input":"1\ntalentpad\ntalepdapd","output":"0\n2\n4\n4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Love Babbar DSA Sheet\\Hashing\\AnagramString.cpp","group":"local","local":true}
