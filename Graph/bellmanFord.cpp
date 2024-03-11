@@ -53,6 +53,7 @@ vector<int> bellmonFord(int n, int m, int src, vector<vector<int>> &edges)
         int u = edges[i][0];
         int v = edges[i][1];
         int w = edges[i][2];
+        // agar abhi bhi change ki possibitlity bachi hai mtlb negative cycle hai. Minimum distance from src to every other vertex n-1 times iterate krte time hi mil jana chaiye tha.
         if (dist[u] != INT_MAX && (dist[u] + w) < dist[v])
         {
             // Negative weight cycle detected

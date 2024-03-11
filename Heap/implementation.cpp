@@ -13,9 +13,9 @@ class heap{
     void insert(int val){
         size = size + 1;
         int idx = size;
-        arr[idx] = val;
-        while(idx > 1){
-            int parent = idx / 2;
+        arr[idx] = val;                                        
+        while(idx > 1){                          
+            int parent = idx / 2;                                  
             if(arr[parent] < arr[idx]){
                 swap(arr[parent], arr[idx]);
                 idx = parent;
@@ -66,7 +66,7 @@ class heap{
     {
         for (int i = 1; i <= size; i++)
         {
-            cout << arr[i] << " ";
+            cout << arr[i] << " ";              
         }
         cout << endl;
     }

@@ -15,6 +15,7 @@ long long int f(vector<long long int> &nums, int size)
         else
             pick = nums[i] + dp[i - 2];
         long long int notPick = dp[i - 1];
+        cout << pick << " " << notPick << endl;
         dp[i] = max(pick, notPick);
     }
 

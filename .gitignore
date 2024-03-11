@@ -1,0 +1,6 @@
+# Ignore directories
+/codechef/
+/codevita/
+
+# Ignore all files with .bin extension
+*.bin

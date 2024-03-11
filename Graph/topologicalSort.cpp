@@ -99,4 +99,43 @@ int main()
 
     return 0;
 }
-// } Driver Code Ends
+// 2nd Method
+
+vector<int> topologicalSort(vector<int> adj[], int V)
+{
+    vector<int> indegree(V, 0);
+    vector<int> topoSort;
+    queue<int> q;
+    for (int i = 0; i < V; i++)
+    {
+        for (auto it : adj[i])
+        {
+            indegree[it]++;
+        }
+    }
+    // store the node in queue whose indegree is 0
+    for (int it = 0; it < V; it++)
+    {
+        if (indegree[it] == 0)
+        {
+            q.push(it);
+        }
+    }
+
+    while (!q.empty())
+    {
+        int frontNode = q.front();
+        q.pop();
+        topoSort.push_back(frontNode);
+        for (auto it : adj[frontNode])
+        {
+            indegree[it]--;
+            if (indegree[it] == 0)
+            {
+                q.push(it);
+            }
+        }
+    }
+
+    return topoSort;
+}

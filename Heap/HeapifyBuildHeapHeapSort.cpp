@@ -31,6 +31,7 @@ public:
     // Function to build a Heap from array.
     void buildHeap(int arr[], int n)
     {
+        // last leaf node is at n/2 - 1, we are not heapify leaf nodes need not to be heapified as they already follow the heap property.
         for (int i = n / 2 - 1; i >= 0; i--)
         {
             heapify(arr, n, i);

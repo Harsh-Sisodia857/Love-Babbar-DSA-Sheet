@@ -5,4 +5,4 @@
             s[i] = s[size - i - 1];
             s[size- i - 1] = c;
         }
-    }
+}

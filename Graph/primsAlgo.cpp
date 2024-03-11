@@ -1,13 +1,12 @@
-
 // Time Complexity - 0(V^2) but we can optimize it by using heap for finding the minimum node from key array which reduce time complexity to 0(Vlog V)
 int spanningTree(int V, vector<vector<int>> adj[])
 {
-    // For prim's algo weighte need three data structure
-    // 1 ) mst -- weighthich keep track weighthich node is visited
+    // For prim's algo we need three data structure
+    // 1) mst - which keeps track of whether a node is visited in the MST.
     vector<bool> mst(V, false);
-    // 2 ) parent -- weighthich keep track of parent of a particular node
+    // 2) parent - which keeps track of the parent of a particular node in the MST.
     vector<int> parent(V, -1);
-    // 3 ) key -- weighthich help me to find the next least distance node in current scenario
+    // 3) key - which helps to find the next least distance node in the current scenario.
     vector<int> key(V, INT_MAX);
     // marking source node as 0 distance
     key[0] = 0;
@@ -51,5 +50,39 @@ int spanningTree(int V, vector<vector<int>> adj[])
     for (int i = 1; i < V; i++)
         sum += key[i];
 
+    return sum;
+}
+
+
+// method 2 :
+int spanningTree(int V, vector<vector<int>> adj[])
+{
+    // minimum spanning Tree Weight
+    vector<bool> vis(V, false);
+    vector<int> parent(V, -1);
+    // {weight,{node,parent}}
+    priority_queue<pair<int, pair<int, int>>, vector<pair<int, pair<int, int>>>, greater<pair<int, pair<int, int>>>> pq;
+    pq.push({0, {0, -1}});
+    int sum = 0;
+    while (!pq.empty())
+    {
+        auto wt = pq.top().first;
+        auto node = pq.top().second.first;
+        auto parent = pq.top().second.second;
+        pq.pop();
+        if (vis[node])
+            continue;
+        vis[node] = true;
+        sum += wt;
+        for (auto it : adj[node])
+        {
+            int weight = it[1];
+            int child = it[0];
+            if (!vis[child])
+            {
+                pq.push({weight, {child, node}});
+            }
+        }
+    }
     return sum;
 }
